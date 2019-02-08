@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <Version>1.0</Version>
+    <Company>Tyrrrz</Company>
+    <Authors>$(Company)</Authors>
+    <Copyright>Copyright (C) 2019 Alexey Golub</Copyright>
+    <Description>Retry library</Description>
+    <PackageTags>retry net standard core</PackageTags>
+    <PackageProjectUrl>https://github.com/Tyrrrz/Failsafe</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/Tyrrrz/Failsafe/blob/master/Changelog.md</PackageReleaseNotes>
+    <PackageLicenseUrl>https://github.com/Tyrrrz/Failsafe/blob/master/License.txt</PackageLicenseUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Tyrrrz/Failsafe/master/favicon.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Tyrrrz/Failsafe</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+
+  </PropertyGroup>
+
+</Project>
