@@ -5,7 +5,7 @@
     <Version>1.0</Version>
     <Company>Tyrrrz</Company>
     <Authors>$(Company)</Authors>
-    <Copyright>Copyright (C) 2019 Alexey Golub</Copyright>
+    <Copyright>Copyright (C) Alexey Golub</Copyright>
     <Description>Retry library</Description>
     <PackageTags>retry net standard core</PackageTags>
     <PackageProjectUrl>https://github.com/Tyrrrz/Failsafe</PackageProjectUrl>
