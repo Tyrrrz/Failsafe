@@ -27,6 +27,8 @@ Failsafe is a library that provides a fluent interface for retrying an operation
 
 ### Basic example
 
+The following code executes `FlakyMethod`, retrying on any exception until it finally succeeds.
+
 ```c#
 var result = Retry.Create().CatchAnyException().Execute(FlakyMethod);
 ```
@@ -37,7 +39,7 @@ var result = Retry.Create().CatchAnyException().Execute(FlakyMethod);
 var result = Retry.Create()
 	.Catch<InvalidOperationException>() // match specific exception
 	.Catch<IOException>(true) // match specific exception and derived from it
-	.Catch<FileNotFoundException>(false, ex => ex.FileName == "file.txt") // match specific exception and use predicate
+	.Catch<HttpRequestException>(false, ex => ex.Message.Contains("403")) // match specific exception and use predicate
 	.Execute(FlakyMethod);
 ```
 
@@ -47,7 +49,7 @@ var result = Retry.Create()
 var result = Retry.Create()
 	.CatchAnyException()
 	.WithMaxTryCount(15) // no more than 15 attempts
-	.WithDelay(TimeSpan.FromSeconds(0.2)) // wait 0.2s before trying again
+	.WithDelay(i => TimeSpan.FromSeconds(i*0.2)) // wait 0.2s after first attempt, 0.4s after second, etc
 	.Execute(FlakyMethod);
 ```
 
