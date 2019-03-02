@@ -20,6 +20,16 @@ namespace Failsafe
         }
 
         /// <summary>
+        /// Specifies a constant delay between retries.
+        /// </summary>
+        public static IRetry WithDelay(this IRetry retry, TimeSpan delay)
+        {
+            retry.GuardNotNull(nameof(retry));
+
+            return retry.WithDelay(_ => delay);
+        }
+
+        /// <summary>
         /// Executes an action with retry.
         /// </summary>
         public static void Execute(this IRetry retry, Action action)

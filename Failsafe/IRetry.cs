@@ -20,9 +20,9 @@ namespace Failsafe
         IRetry WithMaxTryCount(int maxTryCount);
 
         /// <summary>
-        /// Specifies the delay to wait between retries.
+        /// Specifies a variable delay between retries.
         /// </summary>
-        IRetry WithDelay(TimeSpan delay);
+        IRetry WithDelay(Func<int, TimeSpan> delaySelector);
 
         /// <summary>
         /// Executes a function with retry.

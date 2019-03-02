@@ -14,7 +14,7 @@ namespace Failsafe
         private readonly List<Predicate<Exception>> _fullExceptionPredicates = new List<Predicate<Exception>>();
 
         private int? _maxTryCount;
-        private TimeSpan? _delay;
+        private Func<int, TimeSpan> _delaySelector;
 
         private bool MatchException(Exception exception)
         {
@@ -49,9 +49,9 @@ namespace Failsafe
         }
 
         /// <inheritdoc />
-        public IRetry WithDelay(TimeSpan delay)
+        public IRetry WithDelay(Func<int, TimeSpan> delaySelector)
         {
-            _delay = delay;
+            _delaySelector = delaySelector.GuardNotNull(nameof(delaySelector));
             return this;
         }
 
@@ -77,9 +77,9 @@ namespace Failsafe
                     if (!MatchException(ex))
                         throw;
 
-                    // If delay is specified - wait before next retry
-                    if (_delay != null)
-                        Thread.Sleep(_delay.Value);
+                    // If delay selector is specified - wait before next retry
+                    if (_delaySelector != null)
+                        Thread.Sleep(_delaySelector(i));
                 }
             }
         }
@@ -106,9 +106,9 @@ namespace Failsafe
                     if (!MatchException(ex))
                         throw;
 
-                    // If delay is specified - wait before next retry
-                    if (_delay != null)
-                        await Task.Delay(_delay.Value).ConfigureAwait(false);
+                    // If delay selector is specified - wait before next retry
+                    if (_delaySelector != null)
+                        await Task.Delay(_delaySelector(i)).ConfigureAwait(false);
                 }
             }
         }
