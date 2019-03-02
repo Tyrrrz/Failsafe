@@ -5,7 +5,7 @@
 [![NuGet](https://img.shields.io/nuget/v/Failsafe.svg)](https://nuget.org/packages/Failsafe)
 [![NuGet](https://img.shields.io/nuget/dt/Failsafe.svg)](https://nuget.org/packages/Failsafe)
 
-Failsafe is a library that provides a fluent interface for retrying an operation.
+Failsafe is a very simple library that provides fluent interface for retrying an operation. It can be configured to catch an arbitrary set of exceptions using various patterns, with optional delay and retry limit. Works with synchronous and asynchronous methods.
 
 ## Download
 
