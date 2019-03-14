@@ -19,7 +19,7 @@ namespace Failsafe.Internal
             return async () =>
             {
                 await func.Invoke().ConfigureAwait(false);
-                return Task.FromResult<object>(null);
+                return null;
             };
         }
     }
