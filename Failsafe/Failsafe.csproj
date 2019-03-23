@@ -10,8 +10,8 @@
     <PackageTags>retry net standard core</PackageTags>
     <PackageProjectUrl>https://github.com/Tyrrrz/Failsafe</PackageProjectUrl>
     <PackageReleaseNotes>https://github.com/Tyrrrz/Failsafe/blob/master/Changelog.md</PackageReleaseNotes>
-    <PackageLicenseUrl>https://github.com/Tyrrrz/Failsafe/blob/master/License.txt</PackageLicenseUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/Tyrrrz/Failsafe/master/favicon.png</PackageIconUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/Tyrrrz/Failsafe</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
