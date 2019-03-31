@@ -94,7 +94,7 @@ namespace Failsafe
             {
                 try
                 {
-                    return await taskFunction.Invoke().ConfigureAwait(false);
+                    return await taskFunction.Invoke();
                 }
                 catch (Exception ex)
                 {
@@ -108,7 +108,7 @@ namespace Failsafe
 
                     // If delay selector is specified - wait before next retry
                     if (_delaySelector != null)
-                        await Task.Delay(_delaySelector(i)).ConfigureAwait(false);
+                        await Task.Delay(_delaySelector(i));
                 }
             }
         }

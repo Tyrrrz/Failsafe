@@ -18,7 +18,7 @@ namespace Failsafe.Internal
         {
             return async () =>
             {
-                await func.Invoke().ConfigureAwait(false);
+                await func.Invoke();
                 return null;
             };
         }

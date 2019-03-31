@@ -9,7 +9,7 @@ Failsafe is a very simple library that provides fluent interface for retrying an
 
 ## Download
 
-- [NuGet](https://nuget.org/packages/Failsafe): `Install-Package Failsafe`
+- [NuGet](https://nuget.org/packages/Failsafe): `dotnet add package Failsafe`
 - [Continuous integration](https://ci.appveyor.com/project/Tyrrrz/Failsafe)
 
 ## Features
@@ -37,22 +37,23 @@ var result = Retry.Create().CatchAnyException().Execute(FlakyMethod);
 
 ```c#
 var result = Retry.Create()
-	.Catch<InvalidOperationException>() // match specific exception
-	.Catch<IOException>(true) // match specific exception and derived from it
-	.Catch<HttpRequestException>(false, ex => ex.Message.Contains("403")) // match specific exception and use predicate
-	.Execute(FlakyMethod);
+    .Catch<InvalidOperationException>() // match specific exception
+    .Catch<IOException>(true) // match specific exception and derived from it
+    .Catch<HttpRequestException>(false, ex => ex.Message.Contains("403")) // match specific exception and use predicate
+    .Execute(FlakyMethod);
 ```
 
 ### Configure retry limit and delay
 
 ```c#
 var result = Retry.Create()
-	.CatchAnyException()
-	.WithMaxTryCount(15) // no more than 15 attempts
-	.WithDelay(i => TimeSpan.FromSeconds(i*0.2)) // wait 0.2s after first attempt, 0.4s after second, etc
-	.Execute(FlakyMethod);
+    .CatchAnyException()
+    .WithMaxTryCount(15) // no more than 15 attempts
+    .WithDelay(i => TimeSpan.FromSeconds(i*0.2)) // wait 0.2s after first attempt, 0.4s after second, etc
+    .Execute(FlakyMethod);
 ```
 
 ## Libraries used
 
+- [ConfigureAwait.Fody](https://github.com/Fody/ConfigureAwait)
 - [NUnit](https://github.com/nunit/nunit)
