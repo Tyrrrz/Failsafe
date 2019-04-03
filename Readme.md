@@ -4,6 +4,8 @@
 [![Tests](https://img.shields.io/appveyor/tests/Tyrrrz/Failsafe/master.svg)](https://ci.appveyor.com/project/Tyrrrz/Failsafe)
 [![NuGet](https://img.shields.io/nuget/v/Failsafe.svg)](https://nuget.org/packages/Failsafe)
 [![NuGet](https://img.shields.io/nuget/dt/Failsafe.svg)](https://nuget.org/packages/Failsafe)
+[![Donate](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://patreon.com/tyrrrz)
+[![Donate](https://img.shields.io/badge/buymeacoffee-donate-yellow.svg)](https://buymeacoffee.com/tyrrrz)
 
 Failsafe is a very simple library that provides fluent interface for retrying an operation. It can be configured to catch an arbitrary set of exceptions using various patterns, with optional delay and retry limit. Works with synchronous and asynchronous methods.
 
@@ -57,3 +59,7 @@ var result = Retry.Create()
 
 - [ConfigureAwait.Fody](https://github.com/Fody/ConfigureAwait)
 - [NUnit](https://github.com/nunit/nunit)
+
+## Donate
+
+If you really like my projects and want to support me, consider donating to me on [Patreon](https://patreon.com/tyrrrz) or [BuyMeACoffee](https://buymeacoffee.com/tyrrrz). All donations are optional and are greatly appreciated. 🙏
