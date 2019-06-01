@@ -37,21 +37,30 @@ var result = Retry.Create().CatchAnyException().Execute(FlakyMethod);
 
 ### Retry only on specific exceptions
 
+You can also configure which specific exceptions you want to retry on.
+
 ```c#
 var result = Retry.Create()
-    .Catch<InvalidOperationException>() // match specific exception
-    .Catch<IOException>(true) // match specific exception and derived from it
-    .Catch<HttpRequestException>(false, ex => ex.Message.Contains("403")) // match specific exception and use predicate
+    // Catch any InvalidOperationException
+    .Catch<InvalidOperationException>()
+    // Catch IOException and derived from it
+    .Catch<IOException>(true)
+    // Catch HttpRequestException if the predicate matches
+    .Catch<HttpRequestException>(false, e => e.Message.Contains("403"))
     .Execute(FlakyMethod);
 ```
 
 ### Configure retry limit and delay
 
+It's possible to limit the number of retries and configure the delay between them.
+
 ```c#
 var result = Retry.Create()
     .CatchAnyException()
-    .WithMaxTryCount(15) // no more than 15 attempts
-    .WithDelay(i => TimeSpan.FromSeconds(i*0.2)) // wait 0.2s after first attempt, 0.4s after second, etc
+    // Limit to 15 attempts
+    .WithMaxTryCount(15)
+    // Wait 0.2s after 1st, 0.4s after 2nd, etc.
+    .WithDelay(i => TimeSpan.FromSeconds(i*0.2))
     .Execute(FlakyMethod);
 ```
 
