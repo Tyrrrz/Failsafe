@@ -9,8 +9,11 @@ before_build:
 build:
   verbosity: minimal
 
+after_test:
+- choco install codecov && codecov -f "Failsafe.Tests/bin/%CONFIGURATION%/Coverage.xml" --required
+
 artifacts:
-- path: Failsafe\bin\$(configuration)\Failsafe*.nupkg
+- path: Failsafe/bin/$(configuration)/Failsafe*.nupkg
   name: Failsafe.nupkg
 
 deploy:

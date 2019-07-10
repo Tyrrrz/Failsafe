@@ -1,7 +1,8 @@
 # Failsafe
 
-[![Build](https://img.shields.io/appveyor/ci/Tyrrrz/Failsafe/master.svg)](https://ci.appveyor.com/project/Tyrrrz/Failsafe)
-[![Tests](https://img.shields.io/appveyor/tests/Tyrrrz/Failsafe/master.svg)](https://ci.appveyor.com/project/Tyrrrz/Failsafe)
+[![Build](https://img.shields.io/appveyor/ci/Tyrrrz/Failsafe/master.svg)](https://ci.appveyor.com/project/Tyrrrz/Failsafe/branch/master)
+[![Tests](https://img.shields.io/appveyor/tests/Tyrrrz/Failsafe/master.svg)](https://ci.appveyor.com/project/Tyrrrz/Failsafe/branch/master/tests)
+[![Coverage](https://img.shields.io/codecov/c/gh/Tyrrrz/Failsafe/master.svg)](https://codecov.io/gh/Tyrrrz/Failsafe)
 [![NuGet](https://img.shields.io/nuget/v/Failsafe.svg)](https://nuget.org/packages/Failsafe)
 [![NuGet](https://img.shields.io/nuget/dt/Failsafe.svg)](https://nuget.org/packages/Failsafe)
 [![Donate](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://patreon.com/tyrrrz)
