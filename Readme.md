@@ -69,6 +69,7 @@ var result = Retry.Create()
 
 - [ConfigureAwait.Fody](https://github.com/Fody/ConfigureAwait)
 - [NUnit](https://github.com/nunit/nunit)
+- [Coverlet](https://github.com/tonerdo/coverlet)
 
 ## Donate
 
