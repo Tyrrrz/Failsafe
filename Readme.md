@@ -1,10 +1,9 @@
 # Failsafe
 
-[![Build](https://img.shields.io/appveyor/ci/Tyrrrz/Failsafe/master.svg)](https://ci.appveyor.com/project/Tyrrrz/Failsafe/branch/master)
-[![Tests](https://img.shields.io/appveyor/tests/Tyrrrz/Failsafe/master.svg)](https://ci.appveyor.com/project/Tyrrrz/Failsafe/branch/master/tests)
+[![Build](https://github.com/Tyrrrz/Failsafe/workflows/CI/badge.svg)](https://github.com/Tyrrrz/Failsafe/actions)
 [![Coverage](https://img.shields.io/codecov/c/gh/Tyrrrz/Failsafe/master.svg)](https://codecov.io/gh/Tyrrrz/Failsafe)
-[![NuGet](https://img.shields.io/nuget/v/Failsafe.svg)](https://nuget.org/packages/Failsafe)
-[![NuGet](https://img.shields.io/nuget/dt/Failsafe.svg)](https://nuget.org/packages/Failsafe)
+[![Version](https://img.shields.io/nuget/v/Failsafe.svg)](https://nuget.org/packages/Failsafe)
+[![Downloads](https://img.shields.io/nuget/dt/Failsafe.svg)](https://nuget.org/packages/Failsafe)
 [![Donate](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://patreon.com/tyrrrz)
 [![Donate](https://img.shields.io/badge/buymeacoffee-donate-yellow.svg)](https://buymeacoffee.com/tyrrrz)
 
@@ -13,7 +12,6 @@ Failsafe is a very simple library that provides fluent interface for retrying an
 ## Download
 
 - [NuGet](https://nuget.org/packages/Failsafe): `dotnet add package Failsafe`
-- [Continuous integration](https://ci.appveyor.com/project/Tyrrrz/Failsafe)
 
 ## Features
 
