@@ -22,4 +22,4 @@ jobs:
       run: dotnet pack --configuration Release
 
     - name: Deploy
-      run: dotnet nuget push Failsafe/Failsafe.csproj -s nuget.org -k ${{secrets.NUGET_TOKEN}}
+      run: dotnet nuget push Failsafe/bin/Release/*.nupkg -s nuget.org -k ${{secrets.NUGET_TOKEN}}
