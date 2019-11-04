@@ -19,7 +19,4 @@ jobs:
       run: dotnet test --configuration Release
 
     - name: Coverage
-      uses: codecov/codecov-action@v1.0.0
-      with:
-        token: ${{secrets.CODECOV_TOKEN}}
-        file: Failsafe.Tests/bin/Release/Coverage.xml
+      run: curl -s https://codecov.io/bash | bash -s -- -f Failsafe.Tests/bin/Release/Coverage.xml -t ${{secrets.CODECOV_TOKEN}}
