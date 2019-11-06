@@ -1,6 +1,6 @@
 # Failsafe
 
-[![Build](https://github.com/Tyrrrz/Failsafe/workflows/CI/badge.svg)](https://github.com/Tyrrrz/Failsafe/actions)
+[![Build](https://github.com/Tyrrrz/Failsafe/workflows/CI/badge.svg?branch=master)](https://github.com/Tyrrrz/Failsafe/actions)
 [![Coverage](https://codecov.io/gh/Tyrrrz/Failsafe/branch/master/graph/badge.svg)](https://codecov.io/gh/Tyrrrz/Failsafe)
 [![Version](https://img.shields.io/nuget/v/Failsafe.svg)](https://nuget.org/packages/Failsafe)
 [![Downloads](https://img.shields.io/nuget/dt/Failsafe.svg)](https://nuget.org/packages/Failsafe)
