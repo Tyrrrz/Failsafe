@@ -2,7 +2,7 @@
 {
     public class DummyExceptionA : DummyException
     {
-        public DummyExceptionA(string dummyProperty = null) : base(dummyProperty)
+        public DummyExceptionA(string? dummyProperty = null) : base(dummyProperty)
         {
         }
     }

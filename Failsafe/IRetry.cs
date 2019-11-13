@@ -11,7 +11,7 @@ namespace Failsafe
         /// <summary>
         /// Configures this instance to retry on exceptions of given type and, optionally, derived types.
         /// </summary>
-        IRetry Catch<TException>(bool catchDerivedExceptions = false, Predicate<TException> exceptionPredicate = null)
+        IRetry Catch<TException>(bool catchDerivedExceptions = false, Predicate<TException>? exceptionPredicate = null)
             where TException : Exception;
 
         /// <summary>

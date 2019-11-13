@@ -5,7 +5,7 @@ namespace Failsafe.Internal
 {
     internal static class Extensions
     {
-        public static Func<object> ToObjectFunc(this Action action)
+        public static Func<object?> ToObjectFunc(this Action action)
         {
             return () =>
             {
@@ -14,7 +14,7 @@ namespace Failsafe.Internal
             };
         }
 
-        public static Func<Task<object>> ToObjectTaskFunc(this Func<Task> func)
+        public static Func<Task<object?>> ToObjectTaskFunc(this Func<Task> func)
         {
             return async () =>
             {

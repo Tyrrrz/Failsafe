@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Failsafe.Internal;
 
 namespace Failsafe
 {
@@ -14,23 +14,13 @@ namespace Failsafe
         private readonly List<Predicate<Exception>> _fullExceptionPredicates = new List<Predicate<Exception>>();
 
         private int? _maxTryCount;
-        private Func<int, TimeSpan> _delaySelector;
+        private Func<int, TimeSpan>? _delaySelector;
 
-        private bool MatchException(Exception exception)
-        {
-            // An exception is matched if it's matched against any of the predicates
-            foreach (var predicate in _fullExceptionPredicates)
-            {
-                if (predicate(exception))
-                    return true;
-            }
-
-            return false;
-        }
+        private bool MatchException(Exception exception) => _fullExceptionPredicates.Any(p => p(exception));
 
         /// <inheritdoc />
         public IRetry Catch<TException>(bool catchDerivedExceptions = false,
-            Predicate<TException> exceptionPredicate = null) where TException : Exception
+            Predicate<TException>? exceptionPredicate = null) where TException : Exception
         {
             // Create predicate
             var predicate = CreateFullExceptionPredicate(catchDerivedExceptions, exceptionPredicate);
@@ -51,15 +41,13 @@ namespace Failsafe
         /// <inheritdoc />
         public IRetry WithDelay(Func<int, TimeSpan> delaySelector)
         {
-            _delaySelector = delaySelector.GuardNotNull(nameof(delaySelector));
+            _delaySelector = delaySelector;
             return this;
         }
 
         /// <inheritdoc />
         public TReturn Execute<TReturn>(Func<TReturn> function)
         {
-            function.GuardNotNull(nameof(function));
-
             // Enter retry loop
             for (var i = 1;; i++)
             {
@@ -87,8 +75,6 @@ namespace Failsafe
         /// <inheritdoc />
         public async Task<TReturn> ExecuteAsync<TReturn>(Func<Task<TReturn>> taskFunction)
         {
-            taskFunction.GuardNotNull(nameof(taskFunction));
-
             // Enter retry loop
             for (var i = 1;; i++)
             {
@@ -117,7 +103,7 @@ namespace Failsafe
     public partial class Retry
     {
         private static Predicate<Exception> CreateFullExceptionPredicate<TException>(
-            bool catchDerivedExceptions = false, Predicate<TException> exceptionPredicate = null)
+            bool catchDerivedExceptions = false, Predicate<TException>? exceptionPredicate = null)
             where TException : Exception
         {
             return ex =>
